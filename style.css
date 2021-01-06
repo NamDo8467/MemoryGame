@@ -1,0 +1,84 @@
+*{
+    margin:0;
+    padding:0.2%;
+
+}
+body{
+    background-color: blue;
+
+}
+img {
+   width:100px;
+    
+}
+.memory-game{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    width:50%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    perspective: 1000px;
+    
+}
+.memory-card{
+    position:relative;
+    width: 150px;
+    height:200px;
+    border:2px solid black;
+    border-radius: 5px;
+    background-color:lightskyblue;
+    transform-style: preserve-3d;
+    transition:transform 0.5s;
+    
+}
+
+.flip{
+    transform:rotateY(180deg)
+    
+}
+
+.front-page{
+    position:absolute;
+    top:20%;
+    left:16%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+  
+
+.back-page{
+    position:absolute;
+    top:20%;
+    left:20%;
+    backface-visibility: hidden;
+    
+}
+.delete-image {
+    animation-name: blur;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    backface-visibility: hidden;
+    
+}
+@keyframes blur{
+    0% {opacity:2}
+    25% {opacity:1.5}
+    50% {opacity:1}
+    75% {opacity:0.5}
+    100% {opacity:0}
+}
+.delete-card{
+    animation-name: blurAway;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes blurAway{
+    0% {opacity:2}
+    25% {opacity:1.5}
+    50% {opacity:1}
+    75% {opacity:0.5}
+    100% {opacity:0}
+}
